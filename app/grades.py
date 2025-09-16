@@ -1,4 +1,4 @@
-
+import json
 
 class Grades:
     """
@@ -17,7 +17,22 @@ class Grades:
         self.midterm = midterm
         self.project = project
         self.final = final
+     
+    def from_json(self, file_path: str):
+        """
+        Load grades from a JSON file and return a Grades object.
+        """
+        with open(file_path, "r") as f:
+            data = json.load(f)
+ 
+        grades_data = data.get("grades", {}) 
+        self.quiz_1 = grades_data.get("quiz_1")
+        self.quiz_2 = grades_data.get("quiz_2")
+        self.midterm = grades_data.get("midterm")
+        self.project = grades_data.get("project")
+        self.final = grades_data.get("final")
         
+
     def set_all(self, quiz_1=None, quiz_2=None, midterm=None, project=None, final=None):
         """
         Sets the grades all at once. 

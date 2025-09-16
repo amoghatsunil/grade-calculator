@@ -1,0 +1,10 @@
+{
+    "grades": 
+        {
+            "quiz_1" : 10,
+            "quiz_2" : 10,
+            "midterm": 10,
+            "project": 10,
+            "final" : 10
+        }
+}
