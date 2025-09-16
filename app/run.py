@@ -10,8 +10,7 @@ from grade_calculator import GradeCalculator
 my_grades = Grades()
 weights = GradeWeights()
 
-# Set grades achieved so far
-my_grades.quiz_1 = 0.78 # Received 78% in the first quiz
+my_grades.from_json("../config/grades.json")
 
 # Print out the grades to console
 print(my_grades)
